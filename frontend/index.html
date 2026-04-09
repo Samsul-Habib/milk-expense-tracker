@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1f3a5f" />
+  <title>Milk Expense Tracker</title>
+  <link rel="manifest" href="manifest.webmanifest?v=7" />
+  <link rel="stylesheet" href="styles.css?v=7" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <h1>Milk Expense Tracker</h1>
+      <p class="hero-subtitle">Simple daily update. No date entry needed.</p>
+      <div class="today-pill" id="todayLabel">Today: --</div>
+    </header>
+
+    <section class="panel" aria-labelledby="dailyEntryTitle">
+      <h2 id="dailyEntryTitle">Daily Milk Entry</h2>
+      <label class="field-label" for="quantityInput">Milk quantity (kg)</label>
+      <input id="quantityInput" type="number" min="0" step="0.1" value="1" inputmode="decimal" />
+
+      <div class="action-grid">
+        <button id="deliveredBtn" class="btn btn-positive" type="button">Delivered</button>
+        <button id="notDeliveredBtn" class="btn btn-neutral" type="button">Not Delivered</button>
+      </div>
+      <p class="status-text" id="entryStatus" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="rateTitle">
+      <h2 id="rateTitle">Rate Setting</h2>
+      <label class="field-label" for="rateInput">Current rate (INR per kg)</label>
+      <div class="rate-row">
+        <input id="rateInput" type="number" min="1" step="0.5" inputmode="decimal" />
+        <button id="saveRateBtn" class="btn btn-accent" type="button">Save Rate</button>
+      </div>
+      <p class="status-text" id="rateStatus" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="paymentTitle">
+      <div class="summary-head">
+        <h2 id="paymentTitle">Payment Status</h2>
+        <select id="monthSelect" aria-label="Select month"></select>
+      </div>
+
+      <div class="payment-box" aria-live="polite">
+        <p class="payment-label">Payment Status</p>
+        <p id="paymentStatus" class="payment-pill payment-pending">Pending</p>
+        <div class="payment-actions">
+          <button id="markPaidBtn" class="btn btn-positive" type="button">Mark as Paid</button>
+          <button id="markPendingBtn" class="btn btn-warn" type="button">Mark as Pending</button>
+        </div>
+      </div>
+
+      <a href="/summary" class="btn btn-primary-link">View Monthly Summary</a>
+      <p class="status-text" id="summaryStatus" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="app.js?v=7" defer></script>
+</body>
+</html>

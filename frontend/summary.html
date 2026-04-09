@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1f3a5f" />
+  <title>Milk Monthly Summary</title>
+  <link rel="manifest" href="manifest.webmanifest?v=7" />
+  <link rel="stylesheet" href="styles.css?v=7" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <h1>Monthly Summary</h1>
+      <p class="hero-subtitle">View month totals and payment status.</p>
+      <a href="/" class="btn btn-primary-link btn-inline">Back to Main Screen</a>
+    </header>
+
+    <section class="panel" aria-labelledby="summaryTitle">
+      <div class="summary-head">
+        <h2 id="summaryTitle">Summary</h2>
+        <select id="monthSelect" aria-label="Select month"></select>
+      </div>
+
+      <div class="summary-cards">
+        <article class="metric-card">
+          <h3>Total Milk</h3>
+          <p id="totalMilk">0</p>
+        </article>
+        <article class="metric-card">
+          <h3>Rate</h3>
+          <p id="summaryRate">0</p>
+        </article>
+        <article class="metric-card">
+          <h3>Total Cost</h3>
+          <p id="totalCost">0</p>
+        </article>
+      </div>
+
+      <div class="payment-box" aria-live="polite">
+        <p class="payment-label">Payment Status</p>
+        <p id="paymentStatus" class="payment-pill payment-pending">Pending</p>
+      </div>
+
+      <div class="list-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Delivered</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody id="entriesBody"></tbody>
+        </table>
+      </div>
+      <p class="status-text" id="summaryStatus" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="summary.js?v=7" defer></script>
+</body>
+</html>

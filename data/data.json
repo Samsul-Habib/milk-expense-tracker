@@ -1,0 +1,20 @@
+{
+  "rate": 55,
+  "months": {
+    "2026-04": {
+      "entries": [
+        {
+          "date": "2026-04-08",
+          "quantity": 1,
+          "delivered": true
+        },
+        {
+          "date": "2026-04-09",
+          "quantity": 1.5,
+          "delivered": true
+        }
+      ],
+      "status": "pending"
+    }
+  }
+}
